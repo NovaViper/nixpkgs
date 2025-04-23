@@ -56,7 +56,7 @@ buildGoModule (final: {
       }
       ''
         makeWrapper ${lib.getBin final.finalPackage}/bin/sops $out/bin/sops \
-          --prefix PATH : "${lib.makeBinPath (filter age.passthru.plugins)}"
+          --prefix PATH : "${lib.makeBinPath (filter final.passthru.plugins)}"
       '';
 
   meta = {
